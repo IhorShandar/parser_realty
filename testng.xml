@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Test Page">
+        <parameter name="lastId" value="715830572"/>
+        <classes>
+            <class name="com.olx.Page">
+                <methods>
+                    <include name="getNewAds"/>
+                    <include name="nextPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
