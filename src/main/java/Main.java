@@ -11,14 +11,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        //як краще вказувати адресу і де розміщувати драйвер?
         String pathChromeDriver = System.getProperty("user.dir") + "\\lib\\chromedriver.exe";
-//        String pathChromeDriver = "C:\\drivers\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", pathChromeDriver);
 
         Page page = new Page();
         page.setDriver(new ChromeDriver());
-       // page.getDriver().get("https://www.olx.ua/uk/nedvizhimost/q-здам-в-оренду/");
         page.getDriver().get("https://www.olx.ua/uk/nedvizhimost/q-оренда/");
         Thread.sleep(2000);
 
