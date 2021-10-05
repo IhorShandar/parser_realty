@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String pathChromeDriver = System.getProperty("user.dir") + "\\lib\\chromedriver.exe";
+        String pathChromeDriver = System.getProperty("user.dir") + "\\lib\\chromedriver94.exe";
         System.setProperty("webdriver.chrome.driver", pathChromeDriver);
 
         Page page = new Page();

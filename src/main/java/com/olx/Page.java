@@ -3,10 +3,6 @@ package com.olx;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,15 +21,6 @@ public class Page {
 
     public void setDriver(WebDriver driver) {
         this.driver = driver;
-    }
-
-    @BeforeTest
-    public void setUp() throws InterruptedException {
-        String pathChromeDriver = System.getProperty("user.dir") + "\\lib\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", pathChromeDriver);
-        driver = new ChromeDriver();
-        driver.get("https://www.olx.ua/uk/nedvizhimost/q-здам-в-оренду/");
-        Thread.sleep(2000);
     }
 
     public List<String> getNewAds(String lastId) {
@@ -66,16 +53,10 @@ public class Page {
         }
     }
 
-    @Test
     public void nextPage() throws InterruptedException {
         WebElement linkOnPage = driver.findElement(By.xpath("//span[@class='fbold next abs large']//a[@href]"));
         String linkPage = linkOnPage.getAttribute("href");
         driver.get(linkPage);
         Thread.sleep(2000);
-    }
-
-    @AfterTest
-    public void afterTest(){
-        driver.quit();
     }
 }
